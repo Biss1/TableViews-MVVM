@@ -1,6 +1,6 @@
 import UIKit
 
-class BaseTableVC<T : BaseTableVM>: UIViewController, UITableViewDelegate, BaseTableVMDelegate { //MBNavigationBarDelegate {
+class BaseTableVC<T : BaseTableVM>: UIViewController, UITableViewDelegate, BaseTableVMDelegate {
     @IBOutlet var tableView: UITableView!
     var dataSource: BaseTableViewDataSource?
     var viewModel: T!
@@ -54,7 +54,7 @@ class BaseTableVC<T : BaseTableVM>: UIViewController, UITableViewDelegate, BaseT
     //MARK:- NavigationBar
     func setupNavigationBar() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.title = viewModel.headerTitle
+        self.navigationItem.title = viewModel.headerTitle
     }
     
     //MARK:- UITableViewDelegate

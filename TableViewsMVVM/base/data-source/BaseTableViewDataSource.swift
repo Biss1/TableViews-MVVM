@@ -30,9 +30,9 @@ public class BaseTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if let headerView = self.tableView(tableView, viewForHeaderInSection: section) {
-//            return headerView.compressedHeight()
-//        }
+        if let headerView = self.tableView(tableView, viewForHeaderInSection: section) {
+            return headerView.compressedHeight()
+        }
         return 0.001
     }
     

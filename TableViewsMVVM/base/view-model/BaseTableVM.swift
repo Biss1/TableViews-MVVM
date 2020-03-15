@@ -17,6 +17,6 @@ extension BaseTableVM {
     var delegate : BaseTableVMDelegate? { nil }
 }
 
-protocol BaseTableVMDelegate: class {
+protocol BaseTableVMDelegate {
     func updateView()
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="33P-gi-9Cb" customClass="BaseHeader" customModule="TableViewsMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU0-3v-UFF">
+                    <rect key="frame" x="10" y="10" width="266" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                    <color key="textColor" red="0.13106218555740157" green="0.25778901311507457" blue="0.29807472229003906" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xU0-3v-UFF" secondAttribute="bottom" constant="10" id="2hA-oh-Iev"/>
+                <constraint firstAttribute="trailing" secondItem="xU0-3v-UFF" secondAttribute="trailing" constant="10" id="Koo-RL-hM3"/>
+                <constraint firstItem="xU0-3v-UFF" firstAttribute="top" secondItem="33P-gi-9Cb" secondAttribute="top" constant="10" id="L98-NK-UgT"/>
+                <constraint firstItem="xU0-3v-UFF" firstAttribute="leading" secondItem="33P-gi-9Cb" secondAttribute="leading" constant="10" id="hKw-GE-aJJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Bzp-Ri-CXd"/>
+            <connections>
+                <outlet property="titleLabel" destination="xU0-3v-UFF" id="gbe-73-all"/>
+            </connections>
+            <point key="canvasLocation" x="-32" y="127"/>
+        </view>
+    </objects>
+</document>

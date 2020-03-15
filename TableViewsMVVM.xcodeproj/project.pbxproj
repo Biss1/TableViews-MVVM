@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC0129FA241E124C00E9F4CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0129F9241E124C00E9F4CB /* AppDelegate.swift */; };
-		DC0129FC241E124C00E9F4CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0129FB241E124C00E9F4CB /* SceneDelegate.swift */; };
-		DC0129FE241E124C00E9F4CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0129FD241E124C00E9F4CB /* ViewController.swift */; };
 		DC012A01241E124C00E9F4CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0129FF241E124C00E9F4CB /* Main.storyboard */; };
 		DC012A03241E124E00E9F4CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC012A02241E124E00E9F4CB /* Assets.xcassets */; };
 		DC012A06241E124E00E9F4CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC012A04241E124E00E9F4CB /* LaunchScreen.storyboard */; };
@@ -26,6 +24,18 @@
 		DC012A3D241E166C00E9F4CB /* PlacesOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A3C241E166C00E9F4CB /* PlacesOverviewVC.swift */; };
 		DC012A3F241E167900E9F4CB /* PlacesOverviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A3E241E167900E9F4CB /* PlacesOverviewVM.swift */; };
 		DC012A41241E186B00E9F4CB /* TableViewReusableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A40241E186B00E9F4CB /* TableViewReusableViews.swift */; };
+		DC012A43241E22E700E9F4CB /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A42241E22E700E9F4CB /* PlaceCell.swift */; };
+		DC012A45241E22F100E9F4CB /* PlaceCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A44241E22F100E9F4CB /* PlaceCellVM.swift */; };
+		DC012A47241E236500E9F4CB /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC012A46241E236500E9F4CB /* PlaceCell.xib */; };
+		DC012A49241E4CA100E9F4CB /* BaseHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A48241E4CA100E9F4CB /* BaseHeaderVM.swift */; };
+		DC012A4B241E4F7000E9F4CB /* BaseHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC012A4A241E4F7000E9F4CB /* BaseHeader.xib */; };
+		DC012A4D241E6EE000E9F4CB /* PlaceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A4C241E6EE000E9F4CB /* PlaceImageCell.swift */; };
+		DC012A4F241E6EED00E9F4CB /* PlaceImageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A4E241E6EED00E9F4CB /* PlaceImageCellVM.swift */; };
+		DC012A51241E6EFB00E9F4CB /* PlaceImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC012A50241E6EFB00E9F4CB /* PlaceImageCell.xib */; };
+		DC012A53241E8F1D00E9F4CB /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A52241E8F1D00E9F4CB /* UIViewUtils.swift */; };
+		DCA79E32241EB9000029C857 /* PlacesOverviewVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */; };
+		DCA79E34241EBD1A0029C857 /* CollectionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */; };
+		DCA79E37241EBD810029C857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA79E36241EBD810029C857 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +51,6 @@
 /* Begin PBXFileReference section */
 		DC0129F6241E124C00E9F4CB /* TableViewsMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewsMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0129F9241E124C00E9F4CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC0129FB241E124C00E9F4CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC0129FD241E124C00E9F4CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC012A00241E124C00E9F4CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC012A02241E124E00E9F4CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC012A05241E124E00E9F4CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +70,18 @@
 		DC012A3C241E166C00E9F4CB /* PlacesOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesOverviewVC.swift; sourceTree = "<group>"; };
 		DC012A3E241E167900E9F4CB /* PlacesOverviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesOverviewVM.swift; sourceTree = "<group>"; };
 		DC012A40241E186B00E9F4CB /* TableViewReusableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReusableViews.swift; sourceTree = "<group>"; };
+		DC012A42241E22E700E9F4CB /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		DC012A44241E22F100E9F4CB /* PlaceCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellVM.swift; sourceTree = "<group>"; };
+		DC012A46241E236500E9F4CB /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
+		DC012A48241E4CA100E9F4CB /* BaseHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderVM.swift; sourceTree = "<group>"; };
+		DC012A4A241E4F7000E9F4CB /* BaseHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseHeader.xib; sourceTree = "<group>"; };
+		DC012A4C241E6EE000E9F4CB /* PlaceImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCell.swift; sourceTree = "<group>"; };
+		DC012A4E241E6EED00E9F4CB /* PlaceImageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCellVM.swift; sourceTree = "<group>"; };
+		DC012A50241E6EFB00E9F4CB /* PlaceImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceImageCell.xib; sourceTree = "<group>"; };
+		DC012A52241E8F1D00E9F4CB /* UIViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
+		DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesOverviewVMTests.swift; sourceTree = "<group>"; };
+		DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUtils.swift; sourceTree = "<group>"; };
+		DCA79E36241EBD810029C857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA79E37241EBD810029C857 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +109,7 @@
 				DC0129F8241E124C00E9F4CB /* TableViewsMVVM */,
 				DC012A0F241E124E00E9F4CB /* TableViewsMVVMTests */,
 				DC0129F7241E124C00E9F4CB /* Products */,
+				DCA79E35241EBD800029C857 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,8 +128,6 @@
 				DC012A1B241E128A00E9F4CB /* base */,
 				DC012A36241E153500E9F4CB /* features */,
 				DC0129F9241E124C00E9F4CB /* AppDelegate.swift */,
-				DC0129FB241E124C00E9F4CB /* SceneDelegate.swift */,
-				DC0129FD241E124C00E9F4CB /* ViewController.swift */,
 				DC0129FF241E124C00E9F4CB /* Main.storyboard */,
 				DC012A02241E124E00E9F4CB /* Assets.xcassets */,
 				DC012A04241E124E00E9F4CB /* LaunchScreen.storyboard */,
@@ -120,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				DC012A10241E124E00E9F4CB /* TableViewsMVVMTests.swift */,
+				DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */,
 				DC012A12241E124E00E9F4CB /* Info.plist */,
 			);
 			path = TableViewsMVVMTests;
@@ -142,6 +163,8 @@
 			children = (
 				DC012A40241E186B00E9F4CB /* TableViewReusableViews.swift */,
 				DC012A1E241E128A00E9F4CB /* ReusableUIElementProtocol.swift */,
+				DC012A52241E8F1D00E9F4CB /* UIViewUtils.swift */,
+				DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -159,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				DC012A32241E139900E9F4CB /* BaseTableVC.swift */,
+				DC012A48241E4CA100E9F4CB /* BaseHeaderVM.swift */,
+				DC012A4A241E4F7000E9F4CB /* BaseHeader.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -196,6 +221,7 @@
 			children = (
 				DC012A3C241E166C00E9F4CB /* PlacesOverviewVC.swift */,
 				DC012A3E241E167900E9F4CB /* PlacesOverviewVM.swift */,
+				DC012A54241E90C900E9F4CB /* cells */,
 			);
 			path = "places-overview";
 			sourceTree = "<group>";
@@ -205,6 +231,27 @@
 			children = (
 			);
 			path = "place-details";
+			sourceTree = "<group>";
+		};
+		DC012A54241E90C900E9F4CB /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC012A42241E22E700E9F4CB /* PlaceCell.swift */,
+				DC012A44241E22F100E9F4CB /* PlaceCellVM.swift */,
+				DC012A46241E236500E9F4CB /* PlaceCell.xib */,
+				DC012A4C241E6EE000E9F4CB /* PlaceImageCell.swift */,
+				DC012A4E241E6EED00E9F4CB /* PlaceImageCellVM.swift */,
+				DC012A50241E6EFB00E9F4CB /* PlaceImageCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		DCA79E35241EBD800029C857 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCA79E36241EBD810029C857 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,9 +335,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC012A4B241E4F7000E9F4CB /* BaseHeader.xib in Resources */,
 				DC012A06241E124E00E9F4CB /* LaunchScreen.storyboard in Resources */,
 				DC012A03241E124E00E9F4CB /* Assets.xcassets in Resources */,
+				DC012A51241E6EFB00E9F4CB /* PlaceImageCell.xib in Resources */,
 				DC012A01241E124C00E9F4CB /* Main.storyboard in Resources */,
+				DC012A47241E236500E9F4CB /* PlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,20 +358,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC012A4F241E6EED00E9F4CB /* PlaceImageCellVM.swift in Sources */,
+				DCA79E34241EBD1A0029C857 /* CollectionUtils.swift in Sources */,
 				DC012A2E241E12F500E9F4CB /* BaseTableSource.swift in Sources */,
 				DC012A39241E15CA00E9F4CB /* DataService.swift in Sources */,
 				DC012A2F241E12F500E9F4CB /* BaseTableViewDataSource.swift in Sources */,
-				DC0129FE241E124C00E9F4CB /* ViewController.swift in Sources */,
+				DC012A4D241E6EE000E9F4CB /* PlaceImageCell.swift in Sources */,
 				DC012A3D241E166C00E9F4CB /* PlacesOverviewVC.swift in Sources */,
+				DC012A49241E4CA100E9F4CB /* BaseHeaderVM.swift in Sources */,
 				DC012A33241E139900E9F4CB /* BaseTableVC.swift in Sources */,
 				DC012A3F241E167900E9F4CB /* PlacesOverviewVM.swift in Sources */,
 				DC012A2B241E128B00E9F4CB /* CellVM.swift in Sources */,
+				DC012A53241E8F1D00E9F4CB /* UIViewUtils.swift in Sources */,
 				DC0129FA241E124C00E9F4CB /* AppDelegate.swift in Sources */,
 				DC012A35241E13A100E9F4CB /* BaseTableVM.swift in Sources */,
+				DC012A43241E22E700E9F4CB /* PlaceCell.swift in Sources */,
 				DC012A41241E186B00E9F4CB /* TableViewReusableViews.swift in Sources */,
 				DC012A26241E128B00E9F4CB /* ReusableUIElementProtocol.swift in Sources */,
+				DC012A45241E22F100E9F4CB /* PlaceCellVM.swift in Sources */,
 				DC012A2A241E128B00E9F4CB /* HeaderVM.swift in Sources */,
-				DC0129FC241E124C00E9F4CB /* SceneDelegate.swift in Sources */,
 				DC012A25241E128B00E9F4CB /* FooterVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC012A11241E124E00E9F4CB /* TableViewsMVVMTests.swift in Sources */,
+				DCA79E32241EB9000029C857 /* PlacesOverviewVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
