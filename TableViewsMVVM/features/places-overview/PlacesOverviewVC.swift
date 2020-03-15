@@ -1,0 +1,3 @@
+class PlacesOverviewVC: BaseTableVC<PlacesOverviewVM> {
+    
+}
