@@ -1,3 +1,5 @@
+import UIKit
+
 class PlacesOverviewVC: BaseTableVC<PlacesOverviewVM> {
     
     override func setupTableView() {
@@ -14,4 +16,7 @@ class PlacesOverviewVC: BaseTableVC<PlacesOverviewVM> {
         viewModel.switchGroupingType()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "placeDetailsSegue", sender: nil)
+    }
 }

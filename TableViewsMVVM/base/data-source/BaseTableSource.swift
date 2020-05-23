@@ -21,22 +21,10 @@ public struct TableSectionVM {
     var headerVM: HeaderVM?
     var footerVM: FooterVM?
     var cellData: [CellVM]
-    
-    init(cellData: [CellVM],
-         headerVM: HeaderVM? = nil,
-         footerVM: FooterVM? = nil) {
-        self.headerVM = headerVM
-        self.footerVM = footerVM
-        self.cellData = cellData
-     }
 }
 
 public struct BaseTableSource: TableSource {
     public var tableData: [TableSectionVM]
-    
-    init(data: [TableSectionVM]) {
-        tableData = data
-    }
     
     public func numberOfSections() -> Int {
         return tableData.count

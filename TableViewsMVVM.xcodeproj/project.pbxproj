@@ -36,6 +36,17 @@
 		DCA79E32241EB9000029C857 /* PlacesOverviewVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */; };
 		DCA79E34241EBD1A0029C857 /* CollectionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */; };
 		DCA79E37241EBD810029C857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA79E36241EBD810029C857 /* UIKit.framework */; };
+		DCB85B8A242FB20200115684 /* PlaceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B89242FB20200115684 /* PlaceDetailsVC.swift */; };
+		DCB85B8C242FB21A00115684 /* PlaceDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B8B242FB21A00115684 /* PlaceDetailsVM.swift */; };
+		DCB85B8E242FB7CE00115684 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B8D242FB7CE00115684 /* FormCell.swift */; };
+		DCB85B91242FB7E200115684 /* FormCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B90242FB7E200115684 /* FormCellVM.swift */; };
+		DCB85B93242FB8EA00115684 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB85B92242FB8EA00115684 /* FormCell.xib */; };
+		DCB85B95242FBC8700115684 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B94242FBC8700115684 /* SwitchCell.swift */; };
+		DCB85B97242FBC9300115684 /* SwitchCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B96242FBC9300115684 /* SwitchCellVM.swift */; };
+		DCB85B99242FBCA200115684 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB85B98242FBCA200115684 /* SwitchCell.xib */; };
+		DCB85B9B242FBE5100115684 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B9A242FBE5100115684 /* PickerCell.swift */; };
+		DCB85B9E242FBEF000115684 /* PickerCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B9D242FBEF000115684 /* PickerCellVM.swift */; };
+		DCB85BA0242FBF5100115684 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB85B9F242FBF5100115684 /* PickerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +93,17 @@
 		DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesOverviewVMTests.swift; sourceTree = "<group>"; };
 		DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUtils.swift; sourceTree = "<group>"; };
 		DCA79E36241EBD810029C857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DCB85B89242FB20200115684 /* PlaceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsVC.swift; sourceTree = "<group>"; };
+		DCB85B8B242FB21A00115684 /* PlaceDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsVM.swift; sourceTree = "<group>"; };
+		DCB85B8D242FB7CE00115684 /* FormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
+		DCB85B90242FB7E200115684 /* FormCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCellVM.swift; sourceTree = "<group>"; };
+		DCB85B92242FB8EA00115684 /* FormCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
+		DCB85B94242FBC8700115684 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		DCB85B96242FBC9300115684 /* SwitchCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCellVM.swift; sourceTree = "<group>"; };
+		DCB85B98242FBCA200115684 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		DCB85B9A242FBE5100115684 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		DCB85B9D242FBEF000115684 /* PickerCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCellVM.swift; sourceTree = "<group>"; };
+		DCB85B9F242FBF5100115684 /* PickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +251,9 @@
 		DC012A3B241E165100E9F4CB /* place-details */ = {
 			isa = PBXGroup;
 			children = (
+				DCB85B89242FB20200115684 /* PlaceDetailsVC.swift */,
+				DCB85B8B242FB21A00115684 /* PlaceDetailsVM.swift */,
+				DCB85B8F242FB7D200115684 /* cells */,
 			);
 			path = "place-details";
 			sourceTree = "<group>";
@@ -252,6 +277,22 @@
 				DCA79E36241EBD810029C857 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCB85B8F242FB7D200115684 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				DCB85B8D242FB7CE00115684 /* FormCell.swift */,
+				DCB85B90242FB7E200115684 /* FormCellVM.swift */,
+				DCB85B92242FB8EA00115684 /* FormCell.xib */,
+				DCB85B94242FBC8700115684 /* SwitchCell.swift */,
+				DCB85B96242FBC9300115684 /* SwitchCellVM.swift */,
+				DCB85B98242FBCA200115684 /* SwitchCell.xib */,
+				DCB85B9A242FBE5100115684 /* PickerCell.swift */,
+				DCB85B9D242FBEF000115684 /* PickerCellVM.swift */,
+				DCB85B9F242FBF5100115684 /* PickerCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,10 +377,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC012A4B241E4F7000E9F4CB /* BaseHeader.xib in Resources */,
+				DCB85B99242FBCA200115684 /* SwitchCell.xib in Resources */,
 				DC012A06241E124E00E9F4CB /* LaunchScreen.storyboard in Resources */,
 				DC012A03241E124E00E9F4CB /* Assets.xcassets in Resources */,
 				DC012A51241E6EFB00E9F4CB /* PlaceImageCell.xib in Resources */,
 				DC012A01241E124C00E9F4CB /* Main.storyboard in Resources */,
+				DCB85BA0242FBF5100115684 /* PickerCell.xib in Resources */,
+				DCB85B93242FB8EA00115684 /* FormCell.xib in Resources */,
 				DC012A47241E236500E9F4CB /* PlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,25 +403,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC012A4F241E6EED00E9F4CB /* PlaceImageCellVM.swift in Sources */,
+				DCB85B8E242FB7CE00115684 /* FormCell.swift in Sources */,
+				DCB85B9E242FBEF000115684 /* PickerCellVM.swift in Sources */,
 				DCA79E34241EBD1A0029C857 /* CollectionUtils.swift in Sources */,
 				DC012A2E241E12F500E9F4CB /* BaseTableSource.swift in Sources */,
+				DCB85B8A242FB20200115684 /* PlaceDetailsVC.swift in Sources */,
 				DC012A39241E15CA00E9F4CB /* DataService.swift in Sources */,
 				DC012A2F241E12F500E9F4CB /* BaseTableViewDataSource.swift in Sources */,
 				DC012A4D241E6EE000E9F4CB /* PlaceImageCell.swift in Sources */,
+				DCB85B8C242FB21A00115684 /* PlaceDetailsVM.swift in Sources */,
 				DC012A3D241E166C00E9F4CB /* PlacesOverviewVC.swift in Sources */,
+				DCB85B91242FB7E200115684 /* FormCellVM.swift in Sources */,
 				DC012A49241E4CA100E9F4CB /* BaseHeaderVM.swift in Sources */,
 				DC012A33241E139900E9F4CB /* BaseTableVC.swift in Sources */,
 				DC012A3F241E167900E9F4CB /* PlacesOverviewVM.swift in Sources */,
+				DCB85B9B242FBE5100115684 /* PickerCell.swift in Sources */,
 				DC012A2B241E128B00E9F4CB /* CellVM.swift in Sources */,
 				DC012A53241E8F1D00E9F4CB /* UIViewUtils.swift in Sources */,
 				DC0129FA241E124C00E9F4CB /* AppDelegate.swift in Sources */,
 				DC012A35241E13A100E9F4CB /* BaseTableVM.swift in Sources */,
+				DCB85B97242FBC9300115684 /* SwitchCellVM.swift in Sources */,
 				DC012A43241E22E700E9F4CB /* PlaceCell.swift in Sources */,
 				DC012A41241E186B00E9F4CB /* TableViewReusableViews.swift in Sources */,
 				DC012A26241E128B00E9F4CB /* ReusableUIElementProtocol.swift in Sources */,
 				DC012A45241E22F100E9F4CB /* PlaceCellVM.swift in Sources */,
 				DC012A2A241E128B00E9F4CB /* HeaderVM.swift in Sources */,
 				DC012A25241E128B00E9F4CB /* FooterVM.swift in Sources */,
+				DCB85B95242FBC8700115684 /* SwitchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,14 +590,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = LAA69LK8PF;
 				INFOPLIST_FILE = TableViewsMVVM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.TableViewsMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = GenericDevelopmentNew;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -555,14 +611,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TableViewsMVVM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.TableViewsMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

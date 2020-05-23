@@ -5,27 +5,27 @@ class PlacesOverviewVM: BaseTableVM {
     var tableViewModel: BaseTableSource {
         var sections: [TableSectionVM] = []
         switch groupingType {
-        case .byPlaceType:
-            sections = placesGroupedByType()
+        case .byCategory:
+            sections = placesGroupedByCategory()
         case .byCountry:
             sections = placesGroupedByCountry()
         }
         
-        return BaseTableSource(data: sections)
+        return BaseTableSource(tableData: sections)
     }
     
-    var groupingType: PlacesGroupingType = .byPlaceType
+    var groupingType: PlacesGroupingType = .byCategory
     
     init(delegate: BaseTableVMDelegate) {
         self.delegate = delegate
     }
     
     func switchGroupingType() {
-        groupingType = groupingType == .byPlaceType ? .byCountry: .byPlaceType
+        groupingType = groupingType == .byCategory ? .byCountry: .byCategory
         delegate?.updateView()
     }
     
-    func placesGroupedByType() -> [TableSectionVM] {
+    func placesGroupedByCategory() -> [TableSectionVM] {
         let visitedPlacesIds = DataService.visitedPlacesIds
         let placesGrouped = Dictionary(grouping: DataService.places, by: { $0.category })
         let places = placesGrouped.mapValues { (places) -> [PlaceImageCellVM] in
@@ -36,11 +36,12 @@ class PlacesOverviewVM: BaseTableVM {
                                         showVisitedIcon: visited)
             }
         }
-        return places.map({ (arg) -> TableSectionVM in
+        let sections =  places.map({ (arg) -> TableSectionVM in
             let (placeType, placeCellVMs) = arg
             let headerVM = BaseHeaderVM(title: placeType.description())
-            return TableSectionVM(cellData: placeCellVMs, headerVM: headerVM)
+            return TableSectionVM(headerVM: headerVM, cellData: placeCellVMs)
         })
+        return sections.sorted(by: sortSection)
     }
     
     func placesGroupedByCountry() -> [TableSectionVM] {
@@ -55,15 +56,20 @@ class PlacesOverviewVM: BaseTableVM {
                                    ratings: ratings.count)
             }
         }
-        return places.map({ (arg) -> TableSectionVM in
+        let sections = places.map({ (arg) -> TableSectionVM in
             let (placeCountry, placeCellVMs) = arg
             let headerVM = BaseHeaderVM(title: placeCountry)
-            return TableSectionVM(cellData: placeCellVMs, headerVM: headerVM)
+            return TableSectionVM(headerVM: headerVM, cellData: placeCellVMs)
         })
+        return sections.sorted(by: sortSection)
+    }
+    
+    func sortSection(first: TableSectionVM, second: TableSectionVM) -> Bool {
+        return (first.headerVM as! BaseHeaderVM).title < (second.headerVM as! BaseHeaderVM).title
     }
     
     enum PlacesGroupingType {
-        case byPlaceType
+        case byCategory
         case byCountry
     }
 }

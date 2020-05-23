@@ -1,6 +1,6 @@
 import UIKit
 
-class PlaceCell: UITableViewCell, CellView {
+class PlaceCell: UITableViewCell {
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var placeTypeImage: UIImageView!
@@ -24,6 +24,9 @@ class PlaceCell: UITableViewCell, CellView {
         }
         return images
     }
+}
+
+extension PlaceCell: CellView {
     
     func setup(viewModel: CellVM) {
         if let vm = viewModel as? PlaceCellVM {
@@ -41,7 +44,6 @@ class PlaceCell: UITableViewCell, CellView {
                 }
                 ratingsLabel.text = String(format: "%d ratings", vm.ratings)
             }
-            
         }
     }
 }
