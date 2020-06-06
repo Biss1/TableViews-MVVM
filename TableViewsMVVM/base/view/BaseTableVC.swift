@@ -30,6 +30,7 @@ class BaseTableVC<T : BaseTableVM>: UIViewController, UITableViewDelegate, BaseT
     func setupDataSource() {
         guard let tableViewModel = viewModel?.tableViewModel else { return }
         dataSource = BaseTableViewDataSource(vm: tableViewModel)
+        dataSource?.cellDelegate = viewModel as? CellDelegate
     }
     
     func setupData() {
@@ -59,26 +60,26 @@ class BaseTableVC<T : BaseTableVM>: UIViewController, UITableViewDelegate, BaseT
     
     //MARK:- UITableViewDelegate
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return dataSource?.tableView(tableView, viewForHeaderInSection: section)
+        dataSource?.tableView(tableView, viewForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return dataSource?.tableView(tableView, heightForHeaderInSection: section) ?? 0
+        dataSource?.tableView(tableView, heightForHeaderInSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return dataSource?.tableView(tableView, viewForFooterInSection: section)
+        dataSource?.tableView(tableView, viewForFooterInSection: section)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return dataSource?.tableView(tableView, heightForFooterInSection: section) ?? 0
+        dataSource?.tableView(tableView, heightForFooterInSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        UITableView.automaticDimension
     }
     
     //MARK:- MBNavigationBarDelegate

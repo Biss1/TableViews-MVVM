@@ -6,7 +6,7 @@ struct BaseHeaderVM: HeaderVM {
 
 extension BaseHeaderVM: IdentifiableHeaderVM {
     public var headerType: UITableViewHeaderFooterView.Type {
-        return BaseHeader.self
+        BaseHeader.self
     }
 }
 

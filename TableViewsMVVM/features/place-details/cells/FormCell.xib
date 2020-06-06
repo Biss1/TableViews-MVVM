@@ -25,13 +25,16 @@
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="agB-ct-zZc" secondAttribute="bottom" constant="10" id="3kS-5B-NLm"/>
+                    <constraint firstAttribute="bottom" secondItem="agB-ct-zZc" secondAttribute="bottom" constant="5" id="3kS-5B-NLm"/>
                     <constraint firstItem="agB-ct-zZc" firstAttribute="leading" secondItem="tzh-aF-IT4" secondAttribute="leading" constant="10" id="IUe-sb-OnO"/>
                     <constraint firstItem="agB-ct-zZc" firstAttribute="top" secondItem="tzh-aF-IT4" secondAttribute="top" constant="10" id="WuT-81-25A"/>
                     <constraint firstAttribute="trailing" secondItem="agB-ct-zZc" secondAttribute="trailing" constant="10" id="xdA-dM-Bfg"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="197.82608695652175" y="87.723214285714278"/>
+            <connections>
+                <outlet property="textField" destination="agB-ct-zZc" id="OQN-h8-lBI"/>
+            </connections>
+            <point key="canvasLocation" x="30" y="17"/>
         </tableViewCell>
     </objects>
 </document>

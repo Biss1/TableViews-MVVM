@@ -2,7 +2,7 @@ import Foundation
 
 let visitedPlaceIds = "VisitedPlacesIds"
 
-enum PlaceCategory: String {
+enum PlaceCategory: String, CaseIterable {
     case lake = "lake"
     case mountain = "mountain"
     case river = "river"

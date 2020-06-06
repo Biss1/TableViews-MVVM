@@ -1,7 +1,8 @@
 import UIKit
 
-class FormCellVM: CellVM {
-    
+struct FormCellVM: CellVM {
+    var placeholder: String
+    var text: String
 }
 
 extension FormCellVM: IdentifiableCellVM {

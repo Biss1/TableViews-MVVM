@@ -27,11 +27,11 @@ public struct BaseTableSource: TableSource {
     public var tableData: [TableSectionVM]
     
     public func numberOfSections() -> Int {
-        return tableData.count
+        tableData.count
     }
     
     public func numberOfRows(for section: Int) -> Int {
-        return tableData[section].cellData.count
+        tableData[section].cellData.count
     }
     
     public func headerTypeFor(section: Int) -> UITableViewHeaderFooterView.Type? {
@@ -57,7 +57,7 @@ public struct BaseTableSource: TableSource {
     }
     
     public func footerViewModel(section: Int) -> FooterVM? {
-        return tableData[section].footerVM
+        tableData[section].footerVM
     }
     
     public func cellTypeFor(section: Int, row: Int) -> UITableViewCell.Type {
@@ -69,7 +69,7 @@ public struct BaseTableSource: TableSource {
     }
     
     public func cellViewModelFor(section: Int, row: Int) -> CellVM {
-        return tableData[section].cellData[row]
+        tableData[section].cellData[row]
     }
 }
 

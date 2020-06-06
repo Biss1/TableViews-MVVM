@@ -1,7 +1,9 @@
 import UIKit
 
-class PickerCellVM: CellVM {
-    
+struct PickerCellVM: CellVM {
+    var title: String
+    var value: String
+    var type: PlaceDetailsCellType = .categoryPicker
 }
 
 extension PickerCellVM: IdentifiableCellVM {

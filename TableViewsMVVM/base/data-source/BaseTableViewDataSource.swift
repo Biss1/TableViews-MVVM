@@ -5,6 +5,7 @@ public class BaseTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     var viewModel: BaseTableSource
 //    var firstResponderCell: FirstRespondableCell?
     var cellHeights: [IndexPath : CGFloat] = [:]
+    var cellDelegate: CellDelegate?
     
     init(vm: BaseTableSource) {
         viewModel = vm
@@ -74,7 +75,8 @@ public class BaseTableViewDataSource: NSObject, UITableViewDelegate, UITableView
         
         let cellData = viewModel.cellViewModelFor(section:indexPath.section,
                                                   row: indexPath.row)
-         (cell as? CellView)?.setup(viewModel: cellData)
+        (cell as? CellView)?.setup(viewModel: cellData)
+        (cell as? CellView)?.cellDelegate = cellDelegate
 //        if let validFirstResponderCell = (cell as? FirstRespondableCell)?.firstRespondableCellVM.shouldBecomeFirstResponder {
 //            if validFirstResponderCell {
 //                firstResponderCell = cell as? FirstRespondableCell
@@ -93,7 +95,7 @@ public class BaseTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        UITableView.automaticDimension
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -101,17 +103,25 @@ public class BaseTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     }
 
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeights[indexPath] ?? tableView.estimatedRowHeight
+        cellHeights[indexPath] ?? tableView.estimatedRowHeight
     }
     
     public func rectFor(_ tableView: UITableView, indexPath: IndexPath) -> CGRect {
-        return tableView.rectForRow(at: indexPath)
+        tableView.rectForRow(at: indexPath)
     }
     
 }
 
-public protocol CellView {
+public protocol CellView: class {
+    var cellDelegate: CellDelegate? { get set }
     func setup(viewModel: CellVM)
+}
+public extension CellView {
+    // makes the cellDelegate optional so we don't have to add it in all the cells
+    var cellDelegate: CellDelegate? {
+        get { nil }
+        set { }
+    }
 }
 
 public protocol HeaderView {
@@ -121,3 +131,6 @@ public protocol HeaderView {
 public protocol FooterView {
     func setup(viewModel: FooterVM)
 }
+
+public protocol CellDelegate: class {}
+
