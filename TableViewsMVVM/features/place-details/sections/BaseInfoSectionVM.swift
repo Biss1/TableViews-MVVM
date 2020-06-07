@@ -1,11 +1,12 @@
-struct BaseInfoSectionVM: SectionVM {
+class BaseInfoSectionVM: SectionVM {
     var name: String = ""
     var description: String = ""
-    var category: PlaceCategory
+    var category: PlaceCategory = .none
     var validate: Bool = false
     
+    //MARK: - Cells VM
     var nameCellVM: CellVM {
-        FormCellVM(placeholder: "Enter name", text: "")
+        FormCellVM(placeholder: "Enter name", text: name, type: .name)
     }
     
     var categoryCellVM: CellVM {
@@ -13,17 +14,7 @@ struct BaseInfoSectionVM: SectionVM {
     }
     
     var descriptionCellVM: CellVM {
-        FormCellVM(placeholder: "Enter description", text: "")
-        
-//        if description.isEmpty && validate {
-//            FormCellVM(placeholder: "Show additional error", text: "")
-//        }
-        //TODO:
-        // if description is empty show error cell or something
-    }
-    
-    var valid: Bool {
-        !name.isEmpty && !description.isEmpty
+        FormCellVM(placeholder: "Enter description", text: description, type: .description)
     }
     
     //MARK:- SectionVM
@@ -31,5 +22,16 @@ struct BaseInfoSectionVM: SectionVM {
     
     var cellsVMs: [CellVM] {
         return [nameCellVM, descriptionCellVM, categoryCellVM].compactMap{ $0 }
+    }
+    
+    var valid: Bool {
+        !name.isEmpty
+    }
+    
+    // MARK:- Update
+    func update(with place: Place) {
+        name = place.name
+        description = place.description ?? ""
+        category = place.category
     }
 }

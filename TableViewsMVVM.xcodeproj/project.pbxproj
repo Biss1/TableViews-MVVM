@@ -33,15 +33,16 @@
 		DC012A4F241E6EED00E9F4CB /* PlaceImageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A4E241E6EED00E9F4CB /* PlaceImageCellVM.swift */; };
 		DC012A51241E6EFB00E9F4CB /* PlaceImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC012A50241E6EFB00E9F4CB /* PlaceImageCell.xib */; };
 		DC012A53241E8F1D00E9F4CB /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC012A52241E8F1D00E9F4CB /* UIViewUtils.swift */; };
-		DC4C042E248BDA530083AE16 /* PlacesDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C042D248BDA530083AE16 /* PlacesDetailsData.swift */; };
+		DC4C042E248BDA530083AE16 /* PlacesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C042D248BDA530083AE16 /* PlacesModels.swift */; };
 		DC4C0430248BFB770083AE16 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C042F248BFB760083AE16 /* ButtonCell.swift */; };
 		DC4C0432248BFB850083AE16 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4C0431248BFB850083AE16 /* ButtonCell.xib */; };
 		DC4C0434248BFC3E0083AE16 /* ButtonSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C0433248BFC3E0083AE16 /* ButtonSectionVM.swift */; };
 		DC4C0436248BFC600083AE16 /* ButtonCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C0435248BFC600083AE16 /* ButtonCellVM.swift */; };
+		DC4C0439248CEAE70083AE16 /* UITextField-Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C0438248CEAE70083AE16 /* UITextField-Toolbar.swift */; };
+		DC4C043D248D41980083AE16 /* PlaceDetailsSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C043C248D41980083AE16 /* PlaceDetailsSectionVM.swift */; };
+		DC4C043F248D41BC0083AE16 /* LocationInfoSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C043E248D41BC0083AE16 /* LocationInfoSectionVM.swift */; };
 		DC5235EE2479791600DF27C6 /* BaseInfoSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5235ED2479791600DF27C6 /* BaseInfoSectionVM.swift */; };
-		DC5235F02479792600DF27C6 /* CategoryInfoSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5235EF2479792600DF27C6 /* CategoryInfoSectionVM.swift */; };
 		DC5235F22479795500DF27C6 /* CoordinatesSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5235F12479795500DF27C6 /* CoordinatesSectionVM.swift */; };
-		DC5235F42479796000DF27C6 /* CountryInfoSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5235F32479796000DF27C6 /* CountryInfoSectionVM.swift */; };
 		DCA79E32241EB9000029C857 /* PlacesOverviewVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */; };
 		DCA79E34241EBD1A0029C857 /* CollectionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */; };
 		DCA79E37241EBD810029C857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA79E36241EBD810029C857 /* UIKit.framework */; };
@@ -99,15 +100,16 @@
 		DC012A4E241E6EED00E9F4CB /* PlaceImageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCellVM.swift; sourceTree = "<group>"; };
 		DC012A50241E6EFB00E9F4CB /* PlaceImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceImageCell.xib; sourceTree = "<group>"; };
 		DC012A52241E8F1D00E9F4CB /* UIViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
-		DC4C042D248BDA530083AE16 /* PlacesDetailsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailsData.swift; sourceTree = "<group>"; };
+		DC4C042D248BDA530083AE16 /* PlacesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModels.swift; sourceTree = "<group>"; };
 		DC4C042F248BFB760083AE16 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		DC4C0431248BFB850083AE16 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		DC4C0433248BFC3E0083AE16 /* ButtonSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSectionVM.swift; sourceTree = "<group>"; };
 		DC4C0435248BFC600083AE16 /* ButtonCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellVM.swift; sourceTree = "<group>"; };
+		DC4C0438248CEAE70083AE16 /* UITextField-Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField-Toolbar.swift"; sourceTree = "<group>"; };
+		DC4C043C248D41980083AE16 /* PlaceDetailsSectionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsSectionVM.swift; sourceTree = "<group>"; };
+		DC4C043E248D41BC0083AE16 /* LocationInfoSectionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationInfoSectionVM.swift; sourceTree = "<group>"; };
 		DC5235ED2479791600DF27C6 /* BaseInfoSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoSectionVM.swift; sourceTree = "<group>"; };
-		DC5235EF2479792600DF27C6 /* CategoryInfoSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfoSectionVM.swift; sourceTree = "<group>"; };
 		DC5235F12479795500DF27C6 /* CoordinatesSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesSectionVM.swift; sourceTree = "<group>"; };
-		DC5235F32479796000DF27C6 /* CountryInfoSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoSectionVM.swift; sourceTree = "<group>"; };
 		DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesOverviewVMTests.swift; sourceTree = "<group>"; };
 		DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUtils.swift; sourceTree = "<group>"; };
 		DCA79E36241EBD810029C857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -205,6 +207,7 @@
 				DC012A1E241E128A00E9F4CB /* ReusableUIElementProtocol.swift */,
 				DC012A52241E8F1D00E9F4CB /* UIViewUtils.swift */,
 				DCA79E33241EBD1A0029C857 /* CollectionUtils.swift */,
+				DC4C0438248CEAE70083AE16 /* UITextField-Toolbar.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -252,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				DC012A38241E15CA00E9F4CB /* DataService.swift */,
-				DC4C042D248BDA530083AE16 /* PlacesDetailsData.swift */,
+				DC4C042D248BDA530083AE16 /* PlacesModels.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -295,8 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				DC5235ED2479791600DF27C6 /* BaseInfoSectionVM.swift */,
-				DC5235EF2479792600DF27C6 /* CategoryInfoSectionVM.swift */,
-				DC5235F32479796000DF27C6 /* CountryInfoSectionVM.swift */,
+				DC4C043C248D41980083AE16 /* PlaceDetailsSectionVM.swift */,
+				DC4C043E248D41BC0083AE16 /* LocationInfoSectionVM.swift */,
 				DC5235F12479795500DF27C6 /* CoordinatesSectionVM.swift */,
 				DC4C0433248BFC3E0083AE16 /* ButtonSectionVM.swift */,
 			);
@@ -438,9 +441,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4C043D248D41980083AE16 /* PlaceDetailsSectionVM.swift in Sources */,
 				DC012A4F241E6EED00E9F4CB /* PlaceImageCellVM.swift in Sources */,
 				DC5235F22479795500DF27C6 /* CoordinatesSectionVM.swift in Sources */,
+				DC4C0439248CEAE70083AE16 /* UITextField-Toolbar.swift in Sources */,
 				DCB85B8E242FB7CE00115684 /* FormCell.swift in Sources */,
+				DC4C043F248D41BC0083AE16 /* LocationInfoSectionVM.swift in Sources */,
 				DCB85B9E242FBEF000115684 /* PickerCellVM.swift in Sources */,
 				DCA79E34241EBD1A0029C857 /* CollectionUtils.swift in Sources */,
 				DC5235EE2479791600DF27C6 /* BaseInfoSectionVM.swift in Sources */,
@@ -455,13 +461,11 @@
 				DCB85B91242FB7E200115684 /* FormCellVM.swift in Sources */,
 				DC012A49241E4CA100E9F4CB /* BaseHeaderVM.swift in Sources */,
 				DC012A33241E139900E9F4CB /* BaseTableVC.swift in Sources */,
-				DC5235F02479792600DF27C6 /* CategoryInfoSectionVM.swift in Sources */,
 				DC012A3F241E167900E9F4CB /* PlacesOverviewVM.swift in Sources */,
 				DCB85B9B242FBE5100115684 /* PickerCell.swift in Sources */,
 				DC4C0436248BFC600083AE16 /* ButtonCellVM.swift in Sources */,
 				DC012A2B241E128B00E9F4CB /* CellVM.swift in Sources */,
 				DC012A53241E8F1D00E9F4CB /* UIViewUtils.swift in Sources */,
-				DC5235F42479796000DF27C6 /* CountryInfoSectionVM.swift in Sources */,
 				DC0129FA241E124C00E9F4CB /* AppDelegate.swift in Sources */,
 				DC012A35241E13A100E9F4CB /* BaseTableVM.swift in Sources */,
 				DCB85B97242FBC9300115684 /* SwitchCellVM.swift in Sources */,
@@ -470,7 +474,7 @@
 				DC012A26241E128B00E9F4CB /* ReusableUIElementProtocol.swift in Sources */,
 				DC012A45241E22F100E9F4CB /* PlaceCellVM.swift in Sources */,
 				DC012A2A241E128B00E9F4CB /* HeaderVM.swift in Sources */,
-				DC4C042E248BDA530083AE16 /* PlacesDetailsData.swift in Sources */,
+				DC4C042E248BDA530083AE16 /* PlacesModels.swift in Sources */,
 				DC012A25241E128B00E9F4CB /* FooterVM.swift in Sources */,
 				DC4C0434248BFC3E0083AE16 /* ButtonSectionVM.swift in Sources */,
 				DCB85B95242FBC8700115684 /* SwitchCell.swift in Sources */,

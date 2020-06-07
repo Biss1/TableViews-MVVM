@@ -49,9 +49,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="cCM-k2-iLq">
-                        <barButtonItem key="rightBarButtonItem" title="Group" id="fuR-2H-YVO">
+                        <barButtonItem key="leftBarButtonItem" title="Group" id="fuR-2H-YVO">
                             <connections>
                                 <action selector="switchGrouping:" destination="BYZ-38-t0r" id="TMa-jM-FC0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New place" id="tRp-XR-iT0">
+                            <connections>
+                                <segue destination="5fX-Pb-x5z" kind="presentation" id="F9a-Lf-EHp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -72,16 +77,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-Zv-lNH">
-                                <rect key="frame" x="0.0" y="188" width="414" height="620"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dead_sea" translatesAutoresizingMaskIntoConstraints="NO" id="SP8-qg-vau">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="188" id="Q2u-WT-QMW"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xj6-XA-lAa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dead_sea" translatesAutoresizingMaskIntoConstraints="NO" id="SP8-qg-vau">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="188" id="Q2u-WT-QMW"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="188" id="dr2-wb-FdR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-Zv-lNH">
+                                        <rect key="frame" x="0.0" y="188" width="414" height="620"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BL0-T6-9uS">
                                 <rect key="frame" x="0.0" y="138" width="414" height="50"/>
                                 <subviews>
@@ -100,28 +111,40 @@
                                     <constraint firstItem="FYG-lj-I4d" firstAttribute="centerY" secondItem="BL0-T6-9uS" secondAttribute="centerY" id="mG7-hm-gzT"/>
                                 </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" id="VER-Vc-v2Z">
-                                <rect key="frame" x="0.0" y="313" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zno-5r-AKr">
+                                <rect key="frame" x="20" y="291" width="374" height="260"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-iU-KaZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="FsV-6A-VhN"/>
+                                            <barButtonItem title="Done" style="done" id="5Ex-S9-7v5">
+                                                <connections>
+                                                    <action selector="donePickerViewTapped" destination="5fX-Pb-x5z" id="9fx-wu-ysR"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="VK9-O4-0pD">
+                                        <rect key="frame" x="0.0" y="44" width="374" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5fX-Pb-x5z" id="J9M-Ia-5ue"/>
+                                            <outlet property="delegate" destination="5fX-Pb-x5z" id="BKs-3N-qA0"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="5fX-Pb-x5z" id="1Zv-oB-lZS"/>
-                                    <outlet property="delegate" destination="5fX-Pb-x5z" id="EQ0-EU-wKq"/>
-                                </connections>
-                            </pickerView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.8408125635447482" green="0.87490871455474817" blue="0.90492091610538206" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="SP8-qg-vau" firstAttribute="top" secondItem="rwJ-Yi-XuY" secondAttribute="top" id="0QT-al-5Ma"/>
-                            <constraint firstItem="SP8-qg-vau" firstAttribute="trailing" secondItem="rwJ-Yi-XuY" secondAttribute="trailing" id="D0b-Xf-p8X"/>
-                            <constraint firstItem="M8q-Zv-lNH" firstAttribute="leading" secondItem="rwJ-Yi-XuY" secondAttribute="leading" id="L7q-vA-SMg"/>
-                            <constraint firstItem="SP8-qg-vau" firstAttribute="leading" secondItem="rwJ-Yi-XuY" secondAttribute="leading" id="RNT-PY-VSy"/>
-                            <constraint firstItem="rwJ-Yi-XuY" firstAttribute="bottom" secondItem="M8q-Zv-lNH" secondAttribute="bottom" id="WGa-2X-UMJ"/>
+                            <constraint firstItem="xj6-XA-lAa" firstAttribute="bottom" secondItem="rwJ-Yi-XuY" secondAttribute="bottom" id="1NE-aG-y28"/>
+                            <constraint firstAttribute="trailing" secondItem="xj6-XA-lAa" secondAttribute="trailing" id="E1a-dU-5rF"/>
+                            <constraint firstItem="xj6-XA-lAa" firstAttribute="top" secondItem="rwJ-Yi-XuY" secondAttribute="top" id="Jdt-21-EB1"/>
                             <constraint firstItem="BL0-T6-9uS" firstAttribute="trailing" secondItem="rwJ-Yi-XuY" secondAttribute="trailing" id="XVy-fb-HCs"/>
-                            <constraint firstItem="M8q-Zv-lNH" firstAttribute="top" secondItem="SP8-qg-vau" secondAttribute="bottom" id="ZTz-5A-PHL"/>
-                            <constraint firstItem="BL0-T6-9uS" firstAttribute="bottom" secondItem="SP8-qg-vau" secondAttribute="bottom" id="mDi-zA-qNc"/>
-                            <constraint firstItem="rwJ-Yi-XuY" firstAttribute="trailing" secondItem="M8q-Zv-lNH" secondAttribute="trailing" id="tnM-WU-iPk"/>
-                            <constraint firstItem="BL0-T6-9uS" firstAttribute="width" secondItem="SP8-qg-vau" secondAttribute="width" id="wXu-n7-A4c"/>
+                            <constraint firstItem="BL0-T6-9uS" firstAttribute="bottom" secondItem="SP8-qg-vau" secondAttribute="bottom" id="duF-0f-DhL"/>
+                            <constraint firstItem="xj6-XA-lAa" firstAttribute="leading" secondItem="rwJ-Yi-XuY" secondAttribute="leading" id="ib0-nZ-pbF"/>
                             <constraint firstItem="BL0-T6-9uS" firstAttribute="leading" secondItem="rwJ-Yi-XuY" secondAttribute="leading" id="waf-oP-SXW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rwJ-Yi-XuY"/>
@@ -134,7 +157,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pickerView" destination="VER-Vc-v2Z" id="WMu-o8-fd3"/>
+                        <outlet property="pickerView" destination="Zno-5r-AKr" id="4YH-WC-2Xf"/>
+                        <outlet property="placeImage" destination="SP8-qg-vau" id="A4c-Si-eaR"/>
+                        <outlet property="placeNameLabel" destination="FYG-lj-I4d" id="1mX-zB-duH"/>
                         <outlet property="tableView" destination="M8q-Zv-lNH" id="fmd-lM-8IX"/>
                     </connections>
                 </viewController>
@@ -146,4 +171,7 @@
     <resources>
         <image name="dead_sea" width="1000" height="668"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NRO-4U-dcc"/>
+    </inferredMetricsTieBreakers>
 </document>

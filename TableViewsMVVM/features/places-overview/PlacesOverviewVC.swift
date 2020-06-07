@@ -17,6 +17,14 @@ class PlacesOverviewVC: BaseTableVC<PlacesOverviewVM> {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "placeDetailsSegue", sender: nil)
+        let placeId = (tableView.cellForRow(at: indexPath) as? CellView)?.id
+        performSegue(withIdentifier: "placeDetailsSegue", sender: placeId)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let selectedPlaceId = sender as? Int,
+            let place = DataService.getPlaceById(selectedPlaceId) {
+            (segue.destination as? PlaceDetailsVC)?.place = place
+        }
     }
 }

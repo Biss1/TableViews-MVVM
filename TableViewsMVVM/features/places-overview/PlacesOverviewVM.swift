@@ -31,9 +31,7 @@ class PlacesOverviewVM: BaseTableVM {
         let places = placesGrouped.mapValues { (places) -> [PlaceImageCellVM] in
             places.map { (place) -> PlaceImageCellVM in
                 let visited = visitedPlacesIds.contains(place.id)
-                return PlaceImageCellVM(name: place.name,
-                                        imageName: place.image,
-                                        showVisitedIcon: visited)
+                return PlaceImageCellVM(place: place, visited: visited)
             }
         }
         let sections =  places.map({ (arg) -> TableSectionVM in
@@ -50,10 +48,7 @@ class PlacesOverviewVM: BaseTableVM {
             places.map { (place) -> PlaceCellVM in
                 let ratings = DataService.ratings.filter({ $0.placeId == place.id })
                                                  .map( {$0.stars })
-                return PlaceCellVM(name: place.name, imageName: place.image,
-                                   placeIconName: "icon_" + place.category.rawValue,
-                                   stars: Int(ratings.average),
-                                   ratings: ratings.count)
+                return PlaceCellVM(place: place, placeRatings: ratings)
             }
         }
         let sections = places.map({ (arg) -> TableSectionVM in

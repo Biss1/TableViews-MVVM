@@ -1,3 +1,4 @@
+// option for new place - all empty, edit place - prefilled data from the previous screen
 
 protocol PlaceDetailsVMUpdateDelegate: CellDelegate {
     func update(cellType: PlaceDetailsCellType, with data: String)
@@ -7,18 +8,25 @@ protocol PlaceDetailsVMUpdateDelegate: CellDelegate {
 
 class PlaceDetailsVM: BaseTableVM {
     var headerTitle: String = ""
-    var baseInfoSection = BaseInfoSectionVM(category: .river)
-    var categoryInfoSection = CategoryInfoSectionVM()
+    var baseInfoSection = BaseInfoSectionVM()
+    var placeDetailsSection = PlaceDetailsSectionVM()
     var coordinatesSection = CoordinatesSectionVM()
-    var countryInfoSection = CountryInfoSectionVM()
+    var locationInfoSection = LocationInfoSectionVM()
     var buttonSection = ButtonSection()
-    
+    var placeName: String {
+        baseInfoSection.name
+    }
+    var placeImage: String?
+    var saveButtonEnabled: Bool { baseInfoSection.valid &&
+        (!locationInfoSection.showCoordinates || coordinatesSection.valid) }
     
     var tableViewModel: BaseTableSource {
-        var sections: [SectionVM] = [baseInfoSection,
-                                     categoryInfoSection,
-                                     countryInfoSection];
-        if countryInfoSection.showCoordinates {
+        var sections: [SectionVM] = [baseInfoSection];
+        if baseInfoSection.category != .none {
+            sections.append(placeDetailsSection)
+        }
+        sections.append(locationInfoSection)
+        if locationInfoSection.showCoordinates {
             sections.append(coordinatesSection)
         }
         sections.append(buttonSection)
@@ -45,9 +53,20 @@ class PlaceDetailsVM: BaseTableVM {
         self.delegate = delegate
     }
     
+    func update(with place: Place) {
+        placeImage = place.image
+        baseInfoSection.update(with: place)
+        placeDetailsSection.update(with: place)
+        locationInfoSection.update(with: place)
+        coordinatesSection.update(with: place)
+        buttonSection.enabled = saveButtonEnabled
+        delegate?.updateView()
+    }
+    
     func update(pickerRow: Int) {
         if let category = PlaceCategory(rawValue: pickerData[pickerRow]) {
-            categoryInfoSection.category = category
+            baseInfoSection.category = category
+            placeDetailsSection.category = category
             delegate?.updateView()
         }
     }
@@ -60,18 +79,23 @@ extension PlaceDetailsVM: PlaceDetailsVMUpdateDelegate {
             baseInfoSection.name = data
         case .description:
             baseInfoSection.description = data
+        case .latitude, .longitude:
+            coordinatesSection.update(cellType: cellType, with: data)
         default:
-            break;
+            placeDetailsSection.update(cellType: cellType, with: data)
         }
+        buttonSection.enabled = saveButtonEnabled
+        delegate?.updateView()
     }
     
     func update(cellType: PlaceDetailsCellType, with data: Bool) {
         switch cellType {
         case .coordinatesSwitch:
-            countryInfoSection.showCoordinates = data
+            locationInfoSection.showCoordinates = data
         default:
             break;
         }
+        buttonSection.enabled = saveButtonEnabled
         delegate?.updateView()
     }
     
@@ -83,6 +107,7 @@ extension PlaceDetailsVM: PlaceDetailsVMUpdateDelegate {
             pickerType = .countryPicker
         default: break;
         }
+        buttonSection.enabled = saveButtonEnabled
         delegate?.showPicker()
     }
 }
@@ -98,9 +123,27 @@ enum PickerType {
 }
 
 enum PlaceDetailsCellType {
+    case none
     case name
     case description
     case categoryPicker
     case coordinatesSwitch
     case countryPicker
+    case length
+    case width
+    case area
+    case depth
+    case source
+    case mouth
+    case basinSize
+    case averageDischarge
+    case peak
+    case elevation
+    case orogeny
+    case residenceTime
+    case lakeType
+    case primaryInflows
+    case primaryOutflows
+    case latitude
+    case longitude
 }

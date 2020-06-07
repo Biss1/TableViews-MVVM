@@ -1,6 +1,8 @@
 import UIKit
 
 class PlaceCell: UITableViewCell {
+    var id: Int?
+    
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var placeTypeImage: UIImageView!
@@ -30,10 +32,11 @@ extension PlaceCell: CellView {
     
     func setup(viewModel: CellVM) {
         if let vm = viewModel as? PlaceCellVM {
+            id = vm.id
             placeImage.image = UIImage(named: vm.imageName)
             nameLabel.text = vm.name
             placeTypeImage.image = UIImage(named: vm.placeIconName)
-            
+
             for subview in ratingView.subviews {
                 ratingView.removeArrangedSubview(subview)
             }

@@ -114,11 +114,16 @@ public class BaseTableViewDataSource: NSObject, UITableViewDelegate, UITableView
 
 public protocol CellView: class {
     var cellDelegate: CellDelegate? { get set }
+    var id: Int? { get set }
     func setup(viewModel: CellVM)
 }
 public extension CellView {
     // makes the cellDelegate optional so we don't have to add it in all the cells
     var cellDelegate: CellDelegate? {
+        get { nil }
+        set { }
+    }
+    var id: Int? {
         get { nil }
         set { }
     }

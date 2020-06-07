@@ -16,6 +16,7 @@ extension SwitchCell: CellView {
         if let vm = viewModel as? SwitchCellVM {
             titleLabel.text = vm.title
             type = vm.type
+            switchControl.isOn = vm.switchValue
         }
     }
 }
