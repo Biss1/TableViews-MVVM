@@ -8,5 +8,6 @@ A simple project showing the concept of MVVM with using table views for the view
 
 In the 'base' folder are defined all the base classes and protocols for cells, headers, footers and their view models. Also base classes for view controller containing a generic view model. 
 
-Also is implemented a sample app for showing a places in UITableView. The places are grouped in sections - can be grouped by category or country:
+Also is implemented a sample app for showing a places in UITableView. The places are grouped in sections - can be grouped by category or country: 
 
+Detailed explanation can be found in the following article: https://medium.com/@bbisera2/a-story-of-mvvm-with-uitableviews-part-1-78a682d7abb3
