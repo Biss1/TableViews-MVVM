@@ -45,7 +45,7 @@ class PlaceDetailsVM: BaseTableVM {
         case .categoryPicker:
             return PlaceCategory.allCases.map { $0.rawValue }
         default:
-            return [""]
+            return DataService.getContries()
         }
     }
     
@@ -53,6 +53,7 @@ class PlaceDetailsVM: BaseTableVM {
         self.delegate = delegate
     }
     
+    //MARK: - Updates
     func update(with place: Place) {
         placeImage = place.image
         baseInfoSection.update(with: place)
@@ -64,9 +65,16 @@ class PlaceDetailsVM: BaseTableVM {
     }
     
     func update(pickerRow: Int) {
-        if let category = PlaceCategory(rawValue: pickerData[pickerRow]) {
-            baseInfoSection.category = category
-            placeDetailsSection.category = category
+        switch pickerType {
+        case .categoryPicker:
+            if let category = PlaceCategory(rawValue: pickerData[pickerRow]) {
+                baseInfoSection.update(category: category)
+                placeDetailsSection.category = category
+                delegate?.updateView()
+            }
+        case .countryPicker:
+            let country = DataService.getContries()[pickerRow]
+            locationInfoSection.country = country
             delegate?.updateView()
         }
     }
@@ -76,9 +84,7 @@ extension PlaceDetailsVM: PlaceDetailsVMUpdateDelegate {
     func update(cellType: PlaceDetailsCellType, with data: String) {
         switch cellType {
         case .name:
-            baseInfoSection.name = data
-        case .description:
-            baseInfoSection.description = data
+            baseInfoSection.update(cellType: cellType, with: data)
         case .latitude, .longitude:
             coordinatesSection.update(cellType: cellType, with: data)
         default:
@@ -100,15 +106,18 @@ extension PlaceDetailsVM: PlaceDetailsVMUpdateDelegate {
     }
     
     func showPicker(cellType: PlaceDetailsCellType) {
+        var row = 0
         switch cellType {
         case .categoryPicker:
             pickerType = .categoryPicker
+            row = PlaceCategory.allCases.firstIndex(of: baseInfoSection.category) ?? 0
         case .countryPicker:
             pickerType = .countryPicker
+            row = DataService.getContries().firstIndex(where: { $0 == locationInfoSection.country }) ?? 0
         default: break;
         }
         buttonSection.enabled = saveButtonEnabled
-        delegate?.showPicker()
+        delegate?.showPicker(selectedRow: row)
     }
 }
 

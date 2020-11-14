@@ -1,11 +1,11 @@
 class LocationInfoSectionVM: SectionVM {
     var category: PlaceCategory = .none
-    var country: String = ""
+    var country: String = "Choose country"
     var showCoordinates: Bool = false
     
     // MARK: - Cells VM
     var countryCellVM: CellVM {
-        PickerCellVM(title: "Country: ", value: country)
+        PickerCellVM(title: "Country: ", value: country, type: .countryPicker)
     }
     
     var coordinatesCellVM: CellVM? {

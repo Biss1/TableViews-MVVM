@@ -3,6 +3,7 @@ import UIKit
 class PickerCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     var type: PlaceDetailsCellType = .categoryPicker
     var cellDelegate: CellDelegate?
     
@@ -16,6 +17,12 @@ extension PickerCell: CellView {
         if let vm = viewModel as? PickerCellVM {
             titleLabel.text = vm.title
             valueLabel.text = vm.value
+            if let error = vm.error {
+                errorLabel.text = error
+                errorLabel.isHidden = false
+            } else {
+                errorLabel.isHidden = true
+            }
             type = vm.type
             
             let gestureRecognizer = UITapGestureRecognizer(target: self,

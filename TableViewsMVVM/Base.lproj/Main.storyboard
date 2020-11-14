@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3W3-14-WPJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3W3-14-WPJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,17 +38,17 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OjP-nq-A3j">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OjP-nq-A3j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JgT-Ec-3W7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OjP-nq-A3j" secondAttribute="trailing" id="PCu-fw-aG9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OjP-nq-A3j" secondAttribute="bottom" id="Zsp-4T-hcS"/>
                             <constraint firstItem="OjP-nq-A3j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fuS-sW-vQb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="cCM-k2-iLq">
                         <barButtonItem key="leftBarButtonItem" title="Group" id="fuR-2H-YVO">
@@ -97,7 +99,7 @@
                                 <rect key="frame" x="0.0" y="138" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-lj-I4d">
-                                        <rect key="frame" x="10" y="13.5" width="101" height="23"/>
+                                        <rect key="frame" x="10" y="13.5" width="100.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -137,6 +139,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rwJ-Yi-XuY"/>
                         <color key="backgroundColor" red="0.8408125635447482" green="0.87490871455474817" blue="0.90492091610538206" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="xj6-XA-lAa" firstAttribute="bottom" secondItem="rwJ-Yi-XuY" secondAttribute="bottom" id="1NE-aG-y28"/>
@@ -147,7 +150,6 @@
                             <constraint firstItem="xj6-XA-lAa" firstAttribute="leading" secondItem="rwJ-Yi-XuY" secondAttribute="leading" id="ib0-nZ-pbF"/>
                             <constraint firstItem="BL0-T6-9uS" firstAttribute="leading" secondItem="rwJ-Yi-XuY" secondAttribute="leading" id="waf-oP-SXW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rwJ-Yi-XuY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wXE-4R-v2v">
                         <barButtonItem key="rightBarButtonItem" title="Group" id="2qm-BA-Yie">
@@ -157,7 +159,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pickerView" destination="Zno-5r-AKr" id="4YH-WC-2Xf"/>
+                        <outlet property="pickerContainerView" destination="Zno-5r-AKr" id="4YH-WC-2Xf"/>
+                        <outlet property="pickerView" destination="VK9-O4-0pD" id="mQY-XE-CJh"/>
                         <outlet property="placeImage" destination="SP8-qg-vau" id="A4c-Si-eaR"/>
                         <outlet property="placeNameLabel" destination="FYG-lj-I4d" id="1mX-zB-duH"/>
                         <outlet property="tableView" destination="M8q-Zv-lNH" id="fmd-lM-8IX"/>
@@ -168,10 +171,13 @@
             <point key="canvasLocation" x="933.33333333333337" y="101.78571428571428"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="dead_sea" width="1000" height="668"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NRO-4U-dcc"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="dead_sea" width="1000" height="668"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

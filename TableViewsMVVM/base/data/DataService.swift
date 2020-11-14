@@ -33,12 +33,12 @@ struct DataService {
     
     static var places: [Place] {
         // lakes
-        [Lake(id: 1, name: "Ohrid lake", image: "ohrid_lake", category: .lake, country: "Macedonia",
+        [Lake(id: 1, name: "Ohrid lake", description: "beautiful", image: "ohrid_lake", category: .lake, country: "Macedonia",
               coordinates: Coordinates(latitude: 41.0419, longitude: 20.7190),
               lakeType: "Ancient, tectonic lake", primaryInflows: "Sateska River, Biljana's springs, underground link with Lake Prespa",
               primaryOutflows: "Black Drin River", maxLength: 36.4, maxWidth: 16.8, surfaceArea: 388,
               maxDepth: 300, residenceTime: 70),
-         Lake(id: 2, name: "Crater Lake", image: "crater_lake", category: .lake, country: "US"),
+         Lake(id: 2, name: "Crater Lake", image: "crater_lake", category: .lake, country: "USA"),
          Lake(id: 3, name: "Dead Sea", image: "dead_sea", category: .lake, country: "Jordan"),
          Lake(id: 4, name: "Laguna Colorada", image: "laguna_colorada", category: .lake, country: "Bolivia"),
          Lake(id: 5, name: "Lake Wakatipu", image: "lake_wakatipu", category: .lake, country: "New Zealand"),
@@ -85,5 +85,10 @@ struct DataService {
 
         let defaults = UserDefaults.standard
         defaults.set(placeIds, forKey: visitedPlaceIds)
+    }
+    
+    static func getContries() -> [String] {
+        ["USA", "Macedonia", "Jordan", "Bolivia", "New Zealand", "Croatia",
+         "Brazil", "Egypt", "Columbia", "France", "Japan", "Peru", "Iceland"]
     }
 }

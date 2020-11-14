@@ -57,6 +57,7 @@
 		DCB85B9B242FBE5100115684 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B9A242FBE5100115684 /* PickerCell.swift */; };
 		DCB85B9E242FBEF000115684 /* PickerCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB85B9D242FBEF000115684 /* PickerCellVM.swift */; };
 		DCB85BA0242FBF5100115684 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB85B9F242FBF5100115684 /* PickerCell.xib */; };
+		DCD45063255F11270073D06B /* PlaceDetailsVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD45062255F11270073D06B /* PlaceDetailsVMTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		DCB85B9A242FBE5100115684 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		DCB85B9D242FBEF000115684 /* PickerCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCellVM.swift; sourceTree = "<group>"; };
 		DCB85B9F242FBF5100115684 /* PickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
+		DCD45062255F11270073D06B /* PlaceDetailsVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsVMTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				DC012A10241E124E00E9F4CB /* TableViewsMVVMTests.swift */,
 				DCA79E31241EB9000029C857 /* PlacesOverviewVMTests.swift */,
+				DCD45062255F11270073D06B /* PlaceDetailsVMTests.swift */,
 				DC012A12241E124E00E9F4CB /* Info.plist */,
 			);
 			path = TableViewsMVVMTests;
@@ -485,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD45063255F11270073D06B /* PlaceDetailsVMTests.swift in Sources */,
 				DC012A11241E124E00E9F4CB /* TableViewsMVVMTests.swift in Sources */,
 				DCA79E32241EB9000029C857 /* PlacesOverviewVMTests.swift in Sources */,
 			);
@@ -641,6 +645,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LAA69LK8PF;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = TableViewsMVVM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -661,6 +666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = TableViewsMVVM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

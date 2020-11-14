@@ -2,11 +2,12 @@ import UIKit
 
 protocol PlaceDetailsVCDelegate: BaseTableVMDelegate {
     func searchForPlace()
-    func showPicker()
+    func showPicker(selectedRow: Int)
 }
 
 class PlaceDetailsVC: BaseTableVC<PlaceDetailsVM> {
-    @IBOutlet weak var pickerView: UIView!
+    @IBOutlet weak var pickerContainerView: UIView!
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeImage: UIImageView!
     var place: Place?
@@ -47,16 +48,16 @@ class PlaceDetailsVC: BaseTableVC<PlaceDetailsVM> {
     
     // MARK:- Picker view handling
     func setupPickerView() {
-        pickerView.isHidden = true
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerContainerView.isHidden = true
+        pickerContainerView.translatesAutoresizingMaskIntoConstraints = false
 
-        pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        pickerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        pickerContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        pickerContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        pickerContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     @IBAction func donePickerViewTapped() {
-        pickerView.isHidden = true
+        pickerContainerView.isHidden = true
     }
     
     // MARK:- Keyboard notifications
@@ -86,8 +87,10 @@ class PlaceDetailsVC: BaseTableVC<PlaceDetailsVM> {
 
 // MARK: - Payment details delegate
 extension PlaceDetailsVC: PlaceDetailsVCDelegate {
-    func showPicker() {
-        pickerView.isHidden = false
+    func showPicker(selectedRow: Int) {
+        pickerView.reloadAllComponents()
+        pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
+        pickerContainerView.isHidden = false
     }
     
     func searchForPlace() {
