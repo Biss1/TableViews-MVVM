@@ -10,4 +10,6 @@ In the 'base' folder are defined all the base classes and protocols for cells, h
 
 Also is implemented a sample app for showing a places in UITableView. The places are grouped in sections - can be grouped by category or country: 
 
-Detailed explanation can be found in the following article: https://medium.com/@bbisera2/a-story-of-mvvm-with-uitableviews-part-1-78a682d7abb3
+Detailed explanation can be found in the following articles:
+1. General overview: https://medium.com/@bbisera2/a-story-of-mvvm-with-uitableviews-part-1-78a682d7abb3
+2. Using forms: https://medium.com/@bbisera2/mvvm-with-uitableviews-using-forms-part-2-928e3e296c20
