@@ -83,7 +83,7 @@ class PlaceDetailsVM: BaseTableVM {
 extension PlaceDetailsVM: PlaceDetailsVMUpdateDelegate {
     func update(cellType: PlaceDetailsCellType, with data: String) {
         switch cellType {
-        case .name:
+        case .name, .description:
             baseInfoSection.update(cellType: cellType, with: data)
         case .latitude, .longitude:
             coordinatesSection.update(cellType: cellType, with: data)
@@ -107,17 +107,20 @@ extension PlaceDetailsVM: PlaceDetailsVMUpdateDelegate {
     
     func showPicker(cellType: PlaceDetailsCellType) {
         var row = 0
+        var showPicker = true
         switch cellType {
         case .categoryPicker:
             pickerType = .categoryPicker
-            row = PlaceCategory.allCases.firstIndex(of: baseInfoSection.category) ?? 0
+            row = PlaceCategory.allCases.firstIndex(of: baseInfoSection.category)!
         case .countryPicker:
             pickerType = .countryPicker
             row = DataService.getContries().firstIndex(where: { $0 == locationInfoSection.country }) ?? 0
-        default: break;
+        default: showPicker = false
         }
         buttonSection.enabled = saveButtonEnabled
-        delegate?.showPicker(selectedRow: row)
+        if showPicker {
+            delegate?.showPicker(selectedRow: row)
+        }
     }
 }
 

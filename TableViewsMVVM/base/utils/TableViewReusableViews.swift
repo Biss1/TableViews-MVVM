@@ -37,24 +37,3 @@ extension UITableView {
         return headerFooterView
     }
 }
-
-extension UICollectionViewCell: ReusableUIElementProtocol { }
-
-extension UICollectionView {
-    public func register<T: UICollectionViewCell>(cells: [T.Type]) {
-        for cellType in cells {
-            
-            register(UINib.init(nibName: cellType.reuseIdentifier, bundle: nil),
-                     forCellWithReuseIdentifier: cellType.reuseIdentifier)
-        }
-    }
-    
-    public func dequeueReusableCell<T: UICollectionViewCell>(at indexPath: IndexPath, of type: T.Type) -> T? {
-        guard let cell = dequeueReusableCell(withReuseIdentifier: type.reuseIdentifier,
-                                             for: indexPath) as? T else {
-                                                return nil
-        }
-        
-        return cell
-    }
-}

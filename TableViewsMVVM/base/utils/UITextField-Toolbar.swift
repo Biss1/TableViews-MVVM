@@ -11,7 +11,6 @@ extension UITextField {
                                              y: 0,
                                              width: UIScreen.main.bounds.width,
                                              height: toolbarHeight))
-//        toolbar.barStyle = .
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
             UIBarButtonItem(title: "Done",

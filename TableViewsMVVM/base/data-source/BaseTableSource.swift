@@ -72,11 +72,3 @@ public struct BaseTableSource: TableSource {
         tableData[section].cellData[row]
     }
 }
-
-extension BaseTableSource {
-    
-    func viewModel(for indexPath: IndexPath) -> CellVM {
-        return tableData[indexPath.section].cellData[indexPath.row]
-    }
-    
-}

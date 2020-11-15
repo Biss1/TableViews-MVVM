@@ -42,10 +42,13 @@ extension PlaceCell: CellView {
             }
             ratingsLabel.text = ""
             if vm.stars > 0 {
+                ratingView.isHidden = false
                 for i in 0...vm.stars - 1 {
                     ratingView.addArrangedSubview(starImages()[i])
                 }
                 ratingsLabel.text = String(format: "%d ratings", vm.ratings)
+            } else {
+                ratingView.isHidden = true
             }
         }
     }
